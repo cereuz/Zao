@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Zao</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">Zneo@live.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="action_diary">日记</string>
+    <string name="action_query">查询</string>
+    <string name="action_settings">设置</string>
+    <string name="action_about">关于</string>
+
+    <string name="app_tab_home">首页</string>
+    <string name="app_tab_status">广播</string>
+    <string name="app_tab_group">小组</string>
+    <string name="app_tab_profile">我的</string>
+
+    <string name="toGrid">Grid</string>
+
+    <string name="okhttp_zero">登录</string>
+    <string name="okhttp_one">列表</string>
+    <string name="okhttp_two">排行榜</string>
+
+</resources>
