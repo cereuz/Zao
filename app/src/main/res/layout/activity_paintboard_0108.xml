@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+      <Button
+        android:id="@+id/btn_paintboard_0108"
+        android:onClick="loadpic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/htmlpic"/>
+
+    <EditText 
+        android:id="@+id/et_paintboard_0108"
+        android:layout_toEndOf="@id/btn_paintboard_0108"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/picpath"/>
+    <Button
+        android:id="@+id/btn_paintsave_0108"
+        android:layout_alignParentEnd="true" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_writediary_save"/>
+    <Button
+        android:id="@+id/btn_paintpic_0108"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="gallery"
+        android:text="@string/htmlpic"
+        android:layout_below="@+id/et_paintboard_0108"/>
+    <EditText 
+        android:id="@+id/et_paintsize_0108"
+        android:layout_below="@id/et_paintboard_0108"
+        android:layout_toEndOf="@+id/btn_paintpic_0108"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/paintsize"/>
+    <EditText 
+        android:id="@+id/et_paintcolor_0108"
+        android:layout_below="@id/et_paintboard_0108"
+        android:layout_alignParentEnd="true" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/paintcolor"/>
+    
+    <ImageView 
+        android:id="@+id/iv_paintboard_0108"
+        android:layout_below="@id/et_paintsize_0108"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

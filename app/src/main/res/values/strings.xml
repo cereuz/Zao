@@ -2,8 +2,8 @@
     <string name="app_name">Zao</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">Zneo@live.com</string>
+    <string name="nav_header_title">Zao</string>
+    <string name="nav_header_subtitle">zsky@live.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
     <string name="action_diary">日记</string>
@@ -21,5 +21,26 @@
     <string name="okhttp_zero">登录</string>
     <string name="okhttp_one">列表</string>
     <string name="okhttp_two">排行榜</string>
+
+
+    <string name="edittext_writediary_hint">今天，我写了一篇日记。。。</string>
+    <string name="dialog_message">你的内容为空，请写下你的日记。\n Email : sunedo@qq.com \n主页 ：www.onezao.com\n淘宝 ：http://fone.taobao.com \n豆瓣 ：https://site.douban.com/273850/</string>
+    <string name="dialog_message2">你的内容为空，请写下你的日记。 Email : sunedo@qq.com     主页 ：www.onezao.com   淘宝 ：http://fone.taobao.com 豆瓣 ：https://site.douban.com/273850/</string>
+    <string name="handle_time">60</string>
+    <string name="alpha">透明</string>
+    <string name="rotate">旋转</string>
+    <string name="scale">缩放</string>
+    <string name="translate">平移</string>
+    <string name="animset">组合</string>
+    <string name="paintcolor">Color.BLUE</string>
+    <string name="paintsize">16</string>
+    <string name="btn_writediary_save">保存</string>
+    <string name="picpath">/ame/body.jpg</string>
+    <string name="htmlpic">图片</string>
+    <string name="action_broadcast">com.onezao.broadcast.action</string>
+    <string name="broacast">广播</string>
+    <string name="app_notice">key  和   action  不可以改变，一旦设定好，就固定了。广播接收者根据这个设定来接收广播</string>
+    <string name="start">开始</string>
+    <string name="stop">结束</string>
 
 </resources>

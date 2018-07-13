@@ -1,0 +1,44 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+     <!-- 搜索, 应该作为动作按钮展示-->
+    <item android:id="@+id/action_search"
+          android:icon="@drawable/ic_action_search"
+          android:title="@string/action_diary"
+          app:showAsAction="ifRoom" />
+    
+        <item android:id="@+id/action_search2"
+          android:icon="@drawable/ic_action_search"
+          android:title="@string/app_name"
+            app:showAsAction="ifRoom" />
+    
+    <item
+        android:id="@+id/alpha"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="@string/alpha"/>
+    
+    <item
+        android:id="@+id/rotate"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="@string/rotate"/>
+    
+    <item
+        android:id="@+id/scale"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="@string/scale"/>
+    
+    <item
+        android:id="@+id/translate"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="@string/translate"/>
+    <item
+        android:id="@+id/animset"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="@string/animset"/>
+
+</menu>

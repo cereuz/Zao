@@ -15,6 +15,13 @@ import com.onezao.zao.fourlevel0306.FourLevelActivity;
 import com.onezao.zao.gridrecycleview0306.GridRecycleActivity;
 import com.onezao.zao.gridrecycleview0306.GridRecycleVerticalActivity;
 import com.onezao.zao.okhttp0306.OkHttpActivity;
+import com.onezao.zao.practices.alertdialog0306.AlertDialogActivity;
+import com.onezao.zao.practices.handlerdelay0306.DelayHandlerActivity;
+import com.onezao.zao.practices.paintboard0306.PaintBoardActivity;
+import com.onezao.zao.practices.picgallery0306.PicGalleryActivity;
+import com.onezao.zao.practices.pressurediagram0306.PressureDiagramActivity;
+import com.onezao.zao.practices.sendbroadcast0306.SendBroadcastActivity;
+import com.onezao.zao.practices.viewanim0306.ViewAnimationActivity;
 import com.onezao.zao.refreshrecycleview0306.RefreshActivity;
 import com.onezao.zao.staggeredrecycleview0306.StaggeredActivity;
 import com.onezao.zao.zaov.R;
@@ -43,7 +50,9 @@ public class RecycleViewActivity extends Activity {
             data[i] = "item" + i;
         }*/
 
-        String[] data = {this.getResources().getString(R.string.toGrid),"GridVertical","FourLevel","Staggered","DifferentItem","Refresh","OkHttp0626","Zneo","Zsky","Zour","Zneo","Zsky","Zour","Zneo","Zsky","Zour",        "GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky","GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky"};
+        String[] data = {this.getResources().getString(R.string.toGrid),"GridVertical","FourLevel","Staggered","DifferentItem","Refresh","OkHttp0626","AlertDialogActivity","PicGalleryActivity","DelayHandlerActivity", "ViewAnimationActivity","PaintBoardActivity",
+                "SendBroadcastActivity","PressureDiagramActivity",
+                "Zneo","Zsky","Zour","Zneo","Zsky","Zour","Zneo","Zsky","Zour",        "GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky","GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky"};
         mMyAdapter = new MyPicAdapter(this, data);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mMyAdapter);
@@ -110,10 +119,40 @@ public class RecycleViewActivity extends Activity {
                 Intent intent6 = new Intent(this,RefreshActivity.class);
                 startActivity(intent6);
                 return;
+                //"AlertDialogActivity","ArrayAdapterActivity","ListViewActivity","MoreListViewActivity","SimpleAdapterActivity",
             case "OkHttp0626" :
                 Intent intent7 = new Intent(this,OkHttpActivity.class);
                 startActivity(intent7);
                 return;
+            case "AlertDialogActivity" :
+                Intent intent8 = new Intent(this,AlertDialogActivity.class);
+                startActivity(intent8);
+                return;
+            case "PicGalleryActivity" :
+                Intent intent9 = new Intent(this,PicGalleryActivity.class);
+                startActivity(intent9);
+                return;
+            case "DelayHandlerActivity" :
+                Intent intent10 = new Intent(this,DelayHandlerActivity.class);
+                startActivity(intent10);
+                return;
+            case "ViewAnimationActivity" :
+                Intent intent11 = new Intent(this,ViewAnimationActivity.class);
+                startActivity(intent11);
+                return;
+            case "PaintBoardActivity" :
+                Intent intent12 = new Intent(this,PaintBoardActivity.class);
+                startActivity(intent12);
+                return;
+            case "SendBroadcastActivity" :
+                Intent intent13 = new Intent(this,SendBroadcastActivity.class);
+                startActivity(intent13);
+                return;
+            case "PressureDiagramActivity" :
+                Intent intent14 = new Intent(this,PressureDiagramActivity.class);
+                startActivity(intent14);
+                return;
+
         }
     }
 }

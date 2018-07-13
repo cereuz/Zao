@@ -3,6 +3,8 @@
     package="com.onezao.zao.zaov">
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -29,6 +31,29 @@
         <activity android:name="com.onezao.zao.differentitem0306.DifferentItemActivity"></activity>
         <activity android:name="com.onezao.zao.refreshrecycleview0306.RefreshActivity"></activity>
         <activity android:name="com.onezao.zao.okhttp0306.OkHttpActivity"></activity>
+
+        <activity android:name="com.onezao.zao.practices.alertdialog0306.AlertDialogActivity"></activity>
+        <activity android:name="com.onezao.zao.practices.picgallery0306.PicGalleryActivity"></activity>
+        <activity android:name="com.onezao.zao.practices.handlerdelay0306.DelayHandlerActivity"></activity>
+        <activity android:name="com.onezao.zao.practices.viewanim0306.ViewAnimationActivity"></activity>
+        <activity android:name="com.onezao.zao.practices.paintboard0306.PaintBoardActivity"></activity>
+        <activity android:name="com.onezao.zao.practices.sendbroadcast0306.SendBroadcastActivity"></activity>
+        <activity android:name="com.onezao.zao.practices.pressurediagram0306.PressureDiagramActivity"></activity>
+
+        <receiver android:name="com.onezao.zao.practices.sendbroadcast0306.MyBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.onezao.broadcast.action"/>
+            </intent-filter>
+        </receiver>
+        
+        <receiver android:name="com.onezao.zao.practices.applistener0306.AppInstallReceiver">
+            <intent-filter >
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_INSTALL"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
