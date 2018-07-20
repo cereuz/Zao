@@ -38,5 +38,4 @@ Java_com_onezao_zao_practices_pressurediagram0306_PressureDiagramActivity_stopMo
                                                                                       jobject obj) {
     // TODO
     flag =0;
-
 }

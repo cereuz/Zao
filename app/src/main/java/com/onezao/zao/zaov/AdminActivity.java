@@ -1,8 +1,18 @@
 package com.onezao.zao.zaov;
 
+import android.Manifest;
+import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.FeatureInfo;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +25,10 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.onezao.zao.gridrecycleview0306.GridRecycleActivity;
+import com.onezao.zao.practices.alertdialog0306.AlertDialogActivity;
 
 public class AdminActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,View.OnClickListener {
@@ -42,6 +56,11 @@ public class AdminActivity extends AppCompatActivity
     private GroupFragment   groupFragment;
     private ProfileFragment   profileFragment;
 
+    //动态申请权限
+    private static final int MY_PERMISSION_REQUEST_CODE = 10000;
+    final String positive = "获取权限" ;
+    final String negative = "退出";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +79,15 @@ public class AdminActivity extends AppCompatActivity
 
         initView();
         initHome();
+        initPermission();
+    }
+
+    private void initPermission() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            checkPermission();
+        } else {
+            return;
+        }
     }
 
     private void initView() {
@@ -218,4 +246,129 @@ public class AdminActivity extends AppCompatActivity
         tv_onezao_profile.setTextColor(getResources().getColor(R.color.colorText));
     }
 
+
+    public void checkPermission() {
+        /**
+         * 第 1 步: 检查是否有相应的权限
+         */
+        boolean isAllGranted = checkPermissionAllGranted(
+                new String[] {
+                        Manifest.permission.INTERNET,
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.VIBRATE,
+                        Manifest.permission.CAMERA,
+
+                        Manifest.permission.READ_CONTACTS,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.CHANGE_WIFI_STATE,
+                        Manifest.permission.ACCESS_WIFI_STATE,
+                        Manifest.permission.ACCESS_NETWORK_STATE,
+/*                        Manifest.permission.FLASHLIGHT,
+                        Manifest.permission.READ_HISTORY_BOOKMARKS,*/
+//                        Manifest.permission.CAMERA
+                }
+        );
+        // 如果这3个权限全都拥有, 则直接执行读取短信代码
+        if (isAllGranted) {
+/*            getData();
+            simpleAdapter.notifyDataSetChanged();*/
+            toast("所有权限已经授权！");
+            return;
+        }
+
+        /**
+         * 第 2 步: 请求权限
+         */
+        // 一次请求多个权限, 如果其他有权限是已经授予的将会自动忽略掉
+        ActivityCompat.requestPermissions(
+                this,
+                new String[] {
+                        Manifest.permission.INTERNET,
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.VIBRATE,
+                        Manifest.permission.CAMERA,
+                        Manifest.permission.READ_CONTACTS,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.CHANGE_WIFI_STATE,
+                        Manifest.permission.ACCESS_WIFI_STATE,
+                        Manifest.permission.ACCESS_NETWORK_STATE,
+//                        Manifest.permission.CAMERA
+                },
+                MY_PERMISSION_REQUEST_CODE
+        );
+    }
+    /**
+     * 检查是否拥有指定的所有权限
+     */
+    private boolean checkPermissionAllGranted(String[] permissions) {
+        for (String permission : permissions) {
+            if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+                // 只要有一个权限没有被授予, 则直接返回 false
+                toast("检查权限");
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 第 3 步: 申请权限结果返回处理
+     */
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == MY_PERMISSION_REQUEST_CODE) {
+            boolean isAllGranted = true;
+
+            // 判断是否所有的权限都已经授予了
+            for (int grant : grantResults) {
+                if (grant != PackageManager.PERMISSION_GRANTED) {
+                    isAllGranted = false;
+                    break;
+                }
+            }
+
+            if (isAllGranted) {
+                // 如果所有的权限都授予了, 则执行读取短信代码
+/*                getData();
+                simpleAdapter.notifyDataSetChanged();*/
+            } else {
+                // 弹出对话框告诉用户需要权限的原因, 并引导用户去应用权限管理中手动打开权限按钮
+//                openAppDetails();
+                toast("需要授权！");
+                myPermissionDialog();
+            }
+        }
+    }
+    public void toast(String content){
+        Toast.makeText(getApplicationContext(),content,Toast.LENGTH_SHORT).show();
+    }
+
+    //点击按钮，弹出一个普通对话框
+    public void myPermissionDialog(){
+        // 通过builder 构建器来构造
+        final AlertDialog.Builder   builder =  new AlertDialog.Builder(this);
+        builder.setTitle("警告zz");
+        builder.setMessage("世界上最遥远的距离是没有网络！");
+        builder.setPositiveButton(positive, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                System.out.println("点击了确定按钮");
+                Toast.makeText(AdminActivity.this, positive, Toast.LENGTH_SHORT).show();
+                initPermission();
+            }
+        });
+        builder.setNegativeButton(negative, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                System.out.println("点击了取消按钮");
+                Toast.makeText(AdminActivity.this, negative, Toast.LENGTH_SHORT).show();
+                AdminActivity.this.finish();
+            }
+        });
+        builder.setCancelable(false);  //设置获取权限框不可以取消。
+        //最后一步，一定要记得和Toast一样，show出来。
+        builder.show();
+    }
 }

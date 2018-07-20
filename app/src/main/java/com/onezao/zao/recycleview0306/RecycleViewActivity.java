@@ -17,6 +17,7 @@ import com.onezao.zao.gridrecycleview0306.GridRecycleVerticalActivity;
 import com.onezao.zao.okhttp0306.OkHttpActivity;
 import com.onezao.zao.practices.alertdialog0306.AlertDialogActivity;
 import com.onezao.zao.practices.handlerdelay0306.DelayHandlerActivity;
+import com.onezao.zao.practices.myzxing0306.MyScanActivity;
 import com.onezao.zao.practices.paintboard0306.PaintBoardActivity;
 import com.onezao.zao.practices.picgallery0306.PicGalleryActivity;
 import com.onezao.zao.practices.pressurediagram0306.PressureDiagramActivity;
@@ -51,7 +52,7 @@ public class RecycleViewActivity extends Activity {
         }*/
 
         String[] data = {this.getResources().getString(R.string.toGrid),"GridVertical","FourLevel","Staggered","DifferentItem","Refresh","OkHttp0626","AlertDialogActivity","PicGalleryActivity","DelayHandlerActivity", "ViewAnimationActivity","PaintBoardActivity",
-                "SendBroadcastActivity","PressureDiagramActivity",
+                "SendBroadcastActivity","PressureDiagramActivity","MyScanActivity",
                 "Zneo","Zsky","Zour","Zneo","Zsky","Zour","Zneo","Zsky","Zour",        "GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky","GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky"};
         mMyAdapter = new MyPicAdapter(this, data);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -151,6 +152,10 @@ public class RecycleViewActivity extends Activity {
             case "PressureDiagramActivity" :
                 Intent intent14 = new Intent(this,PressureDiagramActivity.class);
                 startActivity(intent14);
+                return;
+            case "MyScanActivity" :
+                Intent intent15 = new Intent(this,MyScanActivity.class);
+                startActivity(intent15);
                 return;
 
         }

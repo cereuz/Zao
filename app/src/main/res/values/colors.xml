@@ -10,4 +10,6 @@
     <color name="colorText">#787878</color>
 
     <color name="choose_eara_item_press_color">#f4f4f4</color>
+
+    <color name="scan_bg">#7f000000</color>
 </resources>
