@@ -14,6 +14,8 @@ import com.onezao.zao.differentitem0306.DifferentItemActivity;
 import com.onezao.zao.fourlevel0306.FourLevelActivity;
 import com.onezao.zao.gridrecycleview0306.GridRecycleActivity;
 import com.onezao.zao.gridrecycleview0306.GridRecycleVerticalActivity;
+import com.onezao.zao.javamail.JavaMailActivity;
+import com.onezao.zao.javamail.JavaMailSetupActivity;
 import com.onezao.zao.okhttp0306.OkHttpActivity;
 import com.onezao.zao.practices.alertdialog0306.AlertDialogActivity;
 import com.onezao.zao.practices.handlerdelay0306.DelayHandlerActivity;
@@ -52,7 +54,7 @@ public class RecycleViewActivity extends Activity {
         }*/
 
         String[] data = {this.getResources().getString(R.string.toGrid),"GridVertical","FourLevel","Staggered","DifferentItem","Refresh","OkHttp0626","AlertDialogActivity","PicGalleryActivity","DelayHandlerActivity", "ViewAnimationActivity","PaintBoardActivity",
-                "SendBroadcastActivity","PressureDiagramActivity","MyScanActivity",
+                "SendBroadcastActivity","PressureDiagramActivity","MyScanActivity","JavaMailSetupActivity",
                 "Zneo","Zsky","Zour","Zneo","Zsky","Zour","Zneo","Zsky","Zour",        "GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky","GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky"};
         mMyAdapter = new MyPicAdapter(this, data);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -156,6 +158,10 @@ public class RecycleViewActivity extends Activity {
             case "MyScanActivity" :
                 Intent intent15 = new Intent(this,MyScanActivity.class);
                 startActivity(intent15);
+                return;
+            case "JavaMailSetupActivity" :
+                Intent intent16 = new Intent(this,JavaMailSetupActivity.class);
+                startActivity(intent16);
                 return;
 
         }

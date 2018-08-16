@@ -59,6 +59,9 @@
         <activity android:name="com.onezao.zao.practices.myzxing0306.CreateCodeActivity"></activity>
         <activity android:name="com.onezao.zao.practices.myzxing0306.MyScanActivity"></activity>
 
+        <activity android:name="com.onezao.zao.javamail.JavaMailActivity"></activity>
+        <activity android:name="com.onezao.zao.javamail.JavaMailSetupActivity"></activity>
+
         <receiver android:name="com.onezao.zao.practices.sendbroadcast0306.MyBroadcastReceiver">
             <intent-filter>
                 <action android:name="com.onezao.broadcast.action"/>

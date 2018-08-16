@@ -61,7 +61,6 @@ public class GridRecycleVerticalActivity extends Activity {
                 view.startAnimation(animation);
                 Toast.makeText(mContext, position + " long click",
                         Toast.LENGTH_SHORT).show();
-
             }
         });
     }

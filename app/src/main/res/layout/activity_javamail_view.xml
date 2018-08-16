@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/toAddEt"
+        android:hint="sunedo@qq.com"
+        android:text="sunedo@qq.com"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <Button
+        android:onClick="senTextMail"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="点击发送文本邮件"
+        />
+
+    <EditText
+        android:id="@+id/et_send_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:onClick="pickFile"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="点击选择需要发送的文件"
+        />
+    <Button
+        android:onClick="sendFileMail"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="点击发送带附件邮件"
+        />
+
+    <Button
+        android:onClick="toSetup"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/action_settings"
+        />
+</LinearLayout>
