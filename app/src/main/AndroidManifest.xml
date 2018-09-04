@@ -60,7 +60,12 @@
         <activity android:name="com.onezao.zao.practices.myzxing0306.MyScanActivity"></activity>
 
         <activity android:name="com.onezao.zao.javamail.JavaMailActivity"></activity>
-        <activity android:name="com.onezao.zao.javamail.JavaMailSetupActivity"></activity>
+        <activity android:name="com.onezao.zao.javamail.JavaMailSetupActivity"
+                  android:exported="true"></activity>
+
+        <activity android:name="com.onezao.zao.practices.gesturelock0306.GestureLockActivity"></activity>
+        <activity android:name="com.onezao.zao.practices.gesturelock0306.GestureVerifyActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.onezao.zao.practices.gesturelock0306.GestureEditActivity" android:screenOrientation="portrait"></activity>
 
         <receiver android:name="com.onezao.zao.practices.sendbroadcast0306.MyBroadcastReceiver">
             <intent-filter>

@@ -25,6 +25,7 @@ import javax.mail.internet.MimeUtility;
 
 /**
  * 发送器
+ * https://github.com/teprinciple/SendMailDemo
  */
 public class MailSender {
 	/**

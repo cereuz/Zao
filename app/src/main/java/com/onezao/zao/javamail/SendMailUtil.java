@@ -54,6 +54,17 @@ public class SendMailUtil {
         }).start();
     }
 
+    public static void send(Context context,String toAdd,boolean b){
+        final MailInfo mailInfo = creatMail(context,toAdd);
+        final MailSender sms = new MailSender();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                sms.sendHtmlMail(mailInfo);
+            }
+        }).start();
+    }
+
 
         @NonNull
     private static MailInfo creatMail(Context context, String toAdd) {

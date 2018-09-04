@@ -40,6 +40,8 @@ public class JavaMailActivity extends AppCompatActivity {
 
     public void senTextMail(View view) {
         SendMailUtil.send(this,editText.getText().toString());
+        //发送html邮件
+//        SendMailUtil.send(this,editText.getText().toString(),true);
     }
 
     public void sendFileMail(View view) {
@@ -61,7 +63,6 @@ public class JavaMailActivity extends AppCompatActivity {
             } catch (IOException e) {
             }
         }*/
-
         SendMailUtil.send(this,file,editText.getText().toString());
     }
 
