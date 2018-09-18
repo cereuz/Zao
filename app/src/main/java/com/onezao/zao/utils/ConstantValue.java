@@ -1,6 +1,4 @@
-package com.onezao.zao.zaov;
-
-import java.util.Set;
+package com.onezao.zao.utils;
 
 public class ConstantValue {
 
@@ -61,5 +59,31 @@ public class ConstantValue {
     public static int FOUR_SECOND = 4000;
     public static int SIX_SECOND = 6000;
     public static int ONE_SECOND = 1000;
+
+    /**
+     * 日历的数据库
+     */
+    public static final String DADABASE_DAILYNOTES = "zao0915";
+    /**
+     * 每日笔记的数据库
+     */
+    public static final String DATABASE_DAILYNOTES_TABLE_NAME = "dailynotes";
+    /**
+     * 每日新闻 表
+     */
+    public static final String DATABASE_CREATE_TABLE_DAILYNOTES = "create table " + DATABASE_DAILYNOTES_TABLE_NAME +
+            " (_id integer primary key autoincrement , title varchar(20),author varchar(20),content varchar(10000000),picpath varchar(200),email varchar(30),time varchar(60));";
+
+    public static final String[]  PIC_PATH = {"https://img3.doubanio.com/view/photo/l/public/p2510110513.webp",
+            "https://img3.doubanio.com/view/photo/l/public/p2507147220.webp",
+            "https://img3.doubanio.com/view/photo/l/public/p1902051195.webp",
+            "https://img3.doubanio.com/view/photo/l/public/p1902051371.webp",
+            "https://img3.doubanio.com/view/photo/l/public/p1902051511.webp",
+            "https://img3.doubanio.com/view/photo/l/public/p1763500663.webp"};
+
+    /**
+     * 请求的权限标识
+     */
+    public static String AUTHORIZATION = "Bearer+eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzI4MjM4MDAzOSIsInVpZCI6IjRlZDcyNGNkMjczNjFmN2ZhNWFlODFhMWFhY2ExZDFmIiwiaWQiOjE2NjMsImV4cCI6MTUzMDU4MjY3MywiY3JlYXRlZCI6MTUyOTk3Nzg3MzA4MH0.PJ8_zIHqRHTLgbHQC8SSNRd8i07fOY5rhNEsgwSbp4ld50BJ6XnATWfxRSO5GFC-AGihHWcw5gAPx4LQfpTxRQ";
 
 }

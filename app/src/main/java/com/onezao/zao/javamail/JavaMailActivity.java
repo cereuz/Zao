@@ -6,20 +6,15 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.onezao.zao.zaov.ConstantValue;
+import com.onezao.zao.utils.ConstantValue;
 import com.onezao.zao.zaov.R;
-import com.onezao.zao.zaov.SpUtils;
+import com.onezao.zao.utils.SpUtils;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
 
 public class JavaMailActivity extends AppCompatActivity {
 

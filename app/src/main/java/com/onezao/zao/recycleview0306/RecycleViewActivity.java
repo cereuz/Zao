@@ -26,7 +26,6 @@ import com.onezao.zao.practices.picgallery0306.PicGalleryActivity;
 import com.onezao.zao.practices.pressurediagram0306.PressureDiagramActivity;
 import com.onezao.zao.practices.sendbroadcast0306.SendBroadcastActivity;
 import com.onezao.zao.practices.viewanim0306.ViewAnimationActivity;
-import com.onezao.zao.refreshrecycleview0306.RefreshActivity;
 import com.onezao.zao.staggeredrecycleview0306.StaggeredActivity;
 import com.onezao.zao.zaov.R;
 
@@ -120,8 +119,8 @@ public class RecycleViewActivity extends Activity {
                 startActivity(intent5);
                 return;
             case "Refresh" :
-                Intent intent6 = new Intent(this,RefreshActivity.class);
-                startActivity(intent6);
+/*                Intent intent6 = new Intent(this,RefreshActivity.class);
+                startActivity(intent6);*/
                 return;
                 //"AlertDialogActivity","ArrayAdapterActivity","ListViewActivity","MoreListViewActivity","SimpleAdapterActivity",
             case "OkHttp0626" :

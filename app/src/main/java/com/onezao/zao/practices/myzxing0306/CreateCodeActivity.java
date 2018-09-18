@@ -20,7 +20,7 @@ import android.widget.Toast;
 import com.google.zxing.WriterException;
 import com.onezao.zao.practices.myzxing0306.zxing.encode.EncodingHandler;
 import com.onezao.zao.zaov.R;
-import com.onezao.zao.zaov.ZaoUtils;
+import com.onezao.zao.utils.ZaoUtils;
 
 import java.io.BufferedOutputStream;
 import java.io.File;

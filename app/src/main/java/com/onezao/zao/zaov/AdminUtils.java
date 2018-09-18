@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.onezao.zao.recycleview0306.RecycleViewActivity;
+import com.onezao.zao.utils.ZaoUtils;
 
 /**
  * Created by Administrator on 2018/4/2 0002.
@@ -46,6 +47,10 @@ public class AdminUtils {
             return true;
         }  else  if (id ==  R.id.action_search) {
             Toast.makeText(context, "搜索一下，onezao，去除重复", Toast.LENGTH_SHORT).show();
+            return true;
+        }  else  if (id ==  R.id.action_search2) {
+            Toast.makeText(context, "自动添加测试数据", Toast.LENGTH_SHORT).show();
+            ZaoUtils.addDailyNotesData(context);
             return true;
         }
         return false;

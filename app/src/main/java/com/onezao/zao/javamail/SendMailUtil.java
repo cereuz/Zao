@@ -2,14 +2,11 @@ package com.onezao.zao.javamail;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
-import com.onezao.zao.zaov.ConstantValue;
-import com.onezao.zao.zaov.SpUtils;
+import com.onezao.zao.utils.ConstantValue;
+import com.onezao.zao.utils.SpUtils;
 
 import java.io.File;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Created by Administrator on 2017/4/10.

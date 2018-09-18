@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.onezao.zao.zaov.AdminUtils;
 import com.onezao.zao.zaov.R;
-import com.onezao.zao.zaov.ZaoUtils;
+import com.onezao.zao.utils.ZaoUtils;
 
 public class DelayHandlerActivity extends Activity {
     private static final long delayMillis = 1000;

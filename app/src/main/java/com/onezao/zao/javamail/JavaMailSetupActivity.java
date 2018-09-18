@@ -8,9 +8,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.onezao.zao.zaov.ConstantValue;
+import com.onezao.zao.utils.ConstantValue;
 import com.onezao.zao.zaov.R;
-import com.onezao.zao.zaov.SpUtils;
+import com.onezao.zao.utils.SpUtils;
 
 public class JavaMailSetupActivity extends AppCompatActivity {
 

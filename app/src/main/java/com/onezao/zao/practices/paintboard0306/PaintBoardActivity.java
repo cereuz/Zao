@@ -26,7 +26,7 @@ import android.widget.Toast;
 import com.onezao.zao.practices.viewanim0306.ViewAnimUtils;
 import com.onezao.zao.zaov.AdminUtils;
 import com.onezao.zao.zaov.R;
-import com.onezao.zao.zaov.ZaoUtils;
+import com.onezao.zao.utils.ZaoUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;

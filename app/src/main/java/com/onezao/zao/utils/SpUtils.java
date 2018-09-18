@@ -1,4 +1,4 @@
-package com.onezao.zao.zaov;
+package com.onezao.zao.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

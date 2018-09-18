@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
-import com.onezao.zao.zaov.Constants;
+import com.onezao.zao.utils.ConstantValue;
 import com.onezao.zao.zaov.R;
 
 import okhttp3.FormBody;
@@ -114,7 +114,7 @@ public class OkHttpActivity extends Activity implements View.OnClickListener{
                         try {
                             //POST传递请求参数
                             FormBody.Builder params=new FormBody.Builder();
-                            params.add("Authorization", Constants.AUTHORIZATION);
+                            params.add("Authorization", ConstantValue.AUTHORIZATION);
                             params.add("phone", "13282380039");
                             params.add("code", "012345");
                             params.add("version", "1.0.1");
@@ -242,7 +242,7 @@ public class OkHttpActivity extends Activity implements View.OnClickListener{
                 try {
                     //POST传递请求参数
                     FormBody.Builder params=new FormBody.Builder();
-                    params.add("Authorization", Constants.AUTHORIZATION);
+                    params.add("Authorization", ConstantValue.AUTHORIZATION);
                     params.add("type", "2");
                     params.add("page", "0");
                     params.add("version", "1.0.1");

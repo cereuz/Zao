@@ -1,5 +1,0 @@
-package com.onezao.zao.zaov;
-
-public class Constants {
-    public static String AUTHORIZATION = "Bearer+eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzI4MjM4MDAzOSIsInVpZCI6IjRlZDcyNGNkMjczNjFmN2ZhNWFlODFhMWFhY2ExZDFmIiwiaWQiOjE2NjMsImV4cCI6MTUzMDU4MjY3MywiY3JlYXRlZCI6MTUyOTk3Nzg3MzA4MH0.PJ8_zIHqRHTLgbHQC8SSNRd8i07fOY5rhNEsgwSbp4ld50BJ6XnATWfxRSO5GFC-AGihHWcw5gAPx4LQfpTxRQ";
-}
