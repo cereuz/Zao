@@ -70,6 +70,7 @@ public class MyNotesAdapter extends RecyclerView.Adapter<MyNotesAdapter.ViewHold
         holder.tv_dailynotes_content.setText(mList.get(position).getContent());
 
         holder.itemView.setTag(mList.get(position).getAuthor());
+        holder.iv_dailynotes_pic.setTag(mList.get(position).getEmail());
 
         //条目点击事件增加的
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +85,17 @@ public class MyNotesAdapter extends RecyclerView.Adapter<MyNotesAdapter.ViewHold
             public boolean onLongClick(View v) {
                 mOnItemClickListener.onItemLongClick(v, position);
                 return true;
+            }
+        });
+
+        //条目item中的ImageView 的点击事件
+        holder.iv_dailynotes_pic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(imageViewInterface !=null) {
+//                  接口实例化后的而对象，调用重写后的方法
+                    imageViewInterface.onclick(v,position);
+                }
             }
         });
     }
@@ -114,7 +126,7 @@ public class MyNotesAdapter extends RecyclerView.Adapter<MyNotesAdapter.ViewHold
      * 按钮点击事件对应的接口
      */
     public interface ItemImageViewInterface {
-        public void onclick(View view, int position);
+        void onclick(View view, int position);
     }
 
 }

@@ -45,7 +45,7 @@
         <activity android:name="com.onezao.zao.staggeredrecycleview0306.StaggeredActivity"></activity>
         <activity android:name="com.onezao.zao.differentitem0306.DifferentItemActivity"></activity>
         <activity android:name="com.onezao.zao.refreshrecycleview0306.RefreshActivity"></activity>
-        <activity android:name="com.onezao.zao.okhttp0306.OkHttpActivity"></activity>
+        <activity android:name="com.onezao.zao.practices.okhttp0306.OkHttpActivity"></activity>
 
         <activity android:name="com.onezao.zao.practices.alertdialog0306.AlertDialogActivity"></activity>
         <activity android:name="com.onezao.zao.practices.picgallery0306.PicGalleryActivity"></activity>

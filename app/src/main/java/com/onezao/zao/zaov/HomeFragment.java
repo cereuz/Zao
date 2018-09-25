@@ -135,15 +135,23 @@ public class HomeFragment extends Fragment {
 //                int position2 = (Integer)view.getTag(); //通过tag获取position
 /*                MyPicAdapter.ViewHolder viewHolder = (MyPicAdapter.ViewHolder)mRecyclerView.getChildViewHolder(mRecyclerView.getChildAt(position));
                   String textItem = viewHolder.tvItem.getText().toString();*/
-                Toast.makeText(getActivity(),"TestItemOnClick ："+ view.getTag() + " ， " + position + " ， "  , Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext,"TestItemOnClick ："+ view.getTag() + " ， " + position + " ， "  , Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onItemLongClick(View view, int position) {
-                Toast.makeText(getActivity(),"TestItemOnLongClick ："+view.getTag()+ " ， " +position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext,"TestItemOnLongClick ："+view.getTag()+ " ， " +position, Toast.LENGTH_SHORT).show();
             }
         });
 
+
+        //条目的图片的点击事件
+        mMyAdapter.setOnItemImageViewClickListener(new MyNotesAdapter.ItemImageViewInterface() {
+            @Override
+            public void onclick(View view, int position) {
+                Toast.makeText(mContext,"点击了图片 ："+view.getTag()+ " ， " + position, Toast.LENGTH_SHORT).show();
+            }
+        });
 
         /**
          * 监听RecycleView的滚动状态

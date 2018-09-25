@@ -72,6 +72,14 @@ public class StatusFragment extends Fragment {
                  Toast.makeText(getActivity(),"TestItemOnLongClick ："+view.getTag()+ " ， " +position, Toast.LENGTH_SHORT).show();
              }
          });
+
+         //条目的图片的点击事件
+         mMyAdapter.setOnItemImageViewClickListener(new MyNotesAdapter.ItemImageViewInterface() {
+             @Override
+             public void onclick(View view, int position) {
+                 Toast.makeText(getActivity(),"点击了图片 ："+view.getTag()+ " ， " + position, Toast.LENGTH_SHORT).show();
+             }
+         });
     }
 
     private void initData() {

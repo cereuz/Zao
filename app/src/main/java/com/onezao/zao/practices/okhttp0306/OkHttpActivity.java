@@ -1,4 +1,4 @@
-package com.onezao.zao.okhttp0306;
+package com.onezao.zao.practices.okhttp0306;
 
 import android.app.Activity;
 import android.os.Bundle;
