@@ -1,0 +1,17 @@
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:onezou="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.onezao.zao.practices.toggleview0306.ToggleView
+        android:id="@+id/toggleView"
+        android:layout_centerInParent="true"
+        onezou:switch_background="@drawable/switch_background"
+        onezou:slide_button="@drawable/slide_button"
+        onezou:switch_state="false"
+        android:layout_width="60dp"
+        android:layout_height="20dp" />
+
+</RelativeLayout>

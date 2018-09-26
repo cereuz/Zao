@@ -44,7 +44,6 @@
         <activity android:name="com.onezao.zao.fourlevel0306.FourLevelActivity"></activity>
         <activity android:name="com.onezao.zao.staggeredrecycleview0306.StaggeredActivity"></activity>
         <activity android:name="com.onezao.zao.differentitem0306.DifferentItemActivity"></activity>
-        <activity android:name="com.onezao.zao.refreshrecycleview0306.RefreshActivity"></activity>
         <activity android:name="com.onezao.zao.practices.okhttp0306.OkHttpActivity"></activity>
 
         <activity android:name="com.onezao.zao.practices.alertdialog0306.AlertDialogActivity"></activity>
@@ -66,6 +65,10 @@
         <activity android:name="com.onezao.zao.practices.gesturelock0306.GestureLockActivity"></activity>
         <activity android:name="com.onezao.zao.practices.gesturelock0306.GestureVerifyActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="com.onezao.zao.practices.gesturelock0306.GestureEditActivity" android:screenOrientation="portrait"></activity>
+
+        <activity android:name="com.onezao.zao.practices.viewpager0306.ViewPagerActivity"/>
+        <activity android:name="com.onezao.zao.practices.popupwindow0306.PopupWindowActivity"/>
+        <activity android:name="com.onezao.zao.practices.toggleview0306.ToggleViewActivity"/>
 
         <receiver android:name="com.onezao.zao.practices.sendbroadcast0306.MyBroadcastReceiver">
             <intent-filter>

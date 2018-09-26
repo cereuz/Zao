@@ -22,9 +22,12 @@ import com.onezao.zao.practices.handlerdelay0306.DelayHandlerActivity;
 import com.onezao.zao.practices.myzxing0306.MyScanActivity;
 import com.onezao.zao.practices.paintboard0306.PaintBoardActivity;
 import com.onezao.zao.practices.picgallery0306.PicGalleryActivity;
+import com.onezao.zao.practices.popupwindow0306.PopupWindowActivity;
 import com.onezao.zao.practices.pressurediagram0306.PressureDiagramActivity;
 import com.onezao.zao.practices.sendbroadcast0306.SendBroadcastActivity;
+import com.onezao.zao.practices.toggleview0306.ToggleViewActivity;
 import com.onezao.zao.practices.viewanim0306.ViewAnimationActivity;
+import com.onezao.zao.practices.viewpager0306.ViewPagerActivity;
 import com.onezao.zao.staggeredrecycleview0306.StaggeredActivity;
 import com.onezao.zao.zaov.R;
 
@@ -54,7 +57,7 @@ public class RecycleViewActivity extends Activity {
 
         String[] data = {this.getResources().getString(R.string.toGrid),"GridVertical","FourLevel","Staggered","DifferentItem","Refresh","OkHttp0626","AlertDialogActivity","PicGalleryActivity","DelayHandlerActivity", "ViewAnimationActivity","PaintBoardActivity",
                 "SendBroadcastActivity","PressureDiagramActivity","MyScanActivity","JavaMailSetupActivity","GestureLock",
-                "Zneo","Zsky","Zour","Zneo","Zsky","Zour","Zneo","Zsky","Zour",        "GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky","GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky"};
+                "ViewPager","PopupWindowActivity","ToggleViewActivity","Zneo","Zsky","Zour","Zneo","Zsky","Zour",        "GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky","GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky"};
         mMyAdapter = new MyPicAdapter(this, data);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mMyAdapter);
@@ -165,6 +168,15 @@ public class RecycleViewActivity extends Activity {
             case "GestureLock" :
                 Intent intent17 = new Intent(this,GestureLockActivity.class);
                 startActivity(intent17);
+                return;
+            case "ViewPager" :
+                startActivity(new Intent(this,ViewPagerActivity.class));
+                return;
+            case "PopupWindowActivity" :
+                startActivity(new Intent(this,PopupWindowActivity.class));
+                return;
+            case "ToggleViewActivity" :
+                startActivity(new Intent(this,ToggleViewActivity.class));
                 return;
 
         }
