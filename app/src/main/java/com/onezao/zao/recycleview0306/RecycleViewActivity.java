@@ -28,6 +28,7 @@ import com.onezao.zao.practices.sendbroadcast0306.SendBroadcastActivity;
 import com.onezao.zao.practices.toggleview0306.ToggleViewActivity;
 import com.onezao.zao.practices.viewanim0306.ViewAnimationActivity;
 import com.onezao.zao.practices.viewpager0306.ViewPagerActivity;
+import com.onezao.zao.practices.voicebroadcast0306.VoiceBroadcastActivity;
 import com.onezao.zao.staggeredrecycleview0306.StaggeredActivity;
 import com.onezao.zao.zaov.R;
 
@@ -57,7 +58,7 @@ public class RecycleViewActivity extends Activity {
 
         String[] data = {this.getResources().getString(R.string.toGrid),"GridVertical","FourLevel","Staggered","DifferentItem","Refresh","OkHttp0626","AlertDialogActivity","PicGalleryActivity","DelayHandlerActivity", "ViewAnimationActivity","PaintBoardActivity",
                 "SendBroadcastActivity","PressureDiagramActivity","MyScanActivity","JavaMailSetupActivity","GestureLock",
-                "ViewPager","PopupWindowActivity","ToggleViewActivity","Zneo","Zsky","Zour","Zneo","Zsky","Zour",        "GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky","GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky"};
+                "ViewPager","PopupWindowActivity","ToggleViewActivity","VoiceBroadcastActivity","Zsky","Zour","Zneo","Zsky","Zour",        "GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky","GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky"};
         mMyAdapter = new MyPicAdapter(this, data);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mMyAdapter);
@@ -177,6 +178,9 @@ public class RecycleViewActivity extends Activity {
                 return;
             case "ToggleViewActivity" :
                 startActivity(new Intent(this,ToggleViewActivity.class));
+                return;
+            case "VoiceBroadcastActivity" :
+                startActivity(new Intent(this,VoiceBroadcastActivity.class));
                 return;
 
         }

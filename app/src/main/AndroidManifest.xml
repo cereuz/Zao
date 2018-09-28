@@ -70,6 +70,8 @@
         <activity android:name="com.onezao.zao.practices.popupwindow0306.PopupWindowActivity"/>
         <activity android:name="com.onezao.zao.practices.toggleview0306.ToggleViewActivity"/>
 
+        <activity android:name="com.onezao.zao.practices.voicebroadcast0306.VoiceBroadcastActivity"/>
+
         <receiver android:name="com.onezao.zao.practices.sendbroadcast0306.MyBroadcastReceiver">
             <intent-filter>
                 <action android:name="com.onezao.broadcast.action"/>
