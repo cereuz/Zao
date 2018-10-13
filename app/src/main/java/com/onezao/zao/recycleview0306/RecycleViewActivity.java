@@ -26,6 +26,7 @@ import com.onezao.zao.practices.popupwindow0306.PopupWindowActivity;
 import com.onezao.zao.practices.pressurediagram0306.PressureDiagramActivity;
 import com.onezao.zao.practices.sendbroadcast0306.SendBroadcastActivity;
 import com.onezao.zao.practices.toggleview0306.ToggleViewActivity;
+import com.onezao.zao.practices.versionupdate0306.VersionUpdateActivity;
 import com.onezao.zao.practices.viewanim0306.ViewAnimationActivity;
 import com.onezao.zao.practices.viewpager0306.ViewPagerActivity;
 import com.onezao.zao.practices.voicebroadcast0306.VoiceBroadcastActivity;
@@ -58,7 +59,7 @@ public class RecycleViewActivity extends Activity {
 
         String[] data = {this.getResources().getString(R.string.toGrid),"GridVertical","FourLevel","Staggered","DifferentItem","Refresh","OkHttp0626","AlertDialogActivity","PicGalleryActivity","DelayHandlerActivity", "ViewAnimationActivity","PaintBoardActivity",
                 "SendBroadcastActivity","PressureDiagramActivity","MyScanActivity","JavaMailSetupActivity","GestureLock",
-                "ViewPager","PopupWindowActivity","ToggleViewActivity","VoiceBroadcastActivity","Zsky","Zour","Zneo","Zsky","Zour",        "GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky","GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky"};
+                "ViewPager","PopupWindowActivity","ToggleViewActivity","VoiceBroadcastActivity","VersionUpdateActivity","Zour","Zneo","Zsky","Zour",        "GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky","GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky"};
         mMyAdapter = new MyPicAdapter(this, data);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mMyAdapter);
@@ -180,7 +181,10 @@ public class RecycleViewActivity extends Activity {
                 startActivity(new Intent(this,ToggleViewActivity.class));
                 return;
             case "VoiceBroadcastActivity" :
-                startActivity(new Intent(this,VoiceBroadcastActivity.class));
+            startActivity(new Intent(this,VoiceBroadcastActivity.class));
+                return;
+            case "VersionUpdateActivity" :
+                startActivity(new Intent(this,VersionUpdateActivity.class));
                 return;
 
         }

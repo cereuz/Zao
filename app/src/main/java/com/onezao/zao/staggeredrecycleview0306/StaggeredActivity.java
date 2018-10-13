@@ -40,7 +40,7 @@ public class StaggeredActivity extends Activity {
         //设置为垂直3列
         recycler_view.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
         ////item间隔16
-        recycler_view.addItemDecoration(new SpacesItemDecoration(16));
+        recycler_view.addItemDecoration(new SpacesItemDecoration(16,16,16,16));
         //设置默认动画
         recycler_view.setItemAnimator(new DefaultItemAnimator());
         //设置适配器

@@ -19,7 +19,9 @@ import android.widget.Toast;
 import com.onezao.zao.adapter.MyNotesAdapter;
 import com.onezao.zao.bean.DailyNotesInfo;
 import com.onezao.zao.database.DailyNotesDao;
+import com.onezao.zao.decoration.LineDecoration;
 import com.onezao.zao.recycleview0306.OnItemClickListener;
+import com.onezao.zao.staggeredrecycleview0306.SpacesItemDecoration;
 import com.onezao.zao.utils.ConstantValue;
 import com.onezao.zao.utils.ZaoUtils;
 
@@ -118,14 +120,22 @@ public class HomeFragment extends Fragment {
      */
     private void initUI(View view) {
 
+        if(mDailyNotesInfoList == null){
+            Toast.makeText(mContext,"暂时没有数据！",Toast.LENGTH_SHORT).show();
+        } else {
         for(DailyNotesInfo info : mDailyNotesInfoList){
             Log.i("Zao","Title = " + info.getTitle() + " Author = " + info.getAuthor() + " Content = " + info.getContent() + " Email = " + info.getEmail() + " Picpath = " + info.getPicpath() + " Time = " + info.getTime() );
-        }
+           }
+
 
         //通过findViewById拿到RecyclerView实例
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_status);
         mMyAdapter = new MyNotesAdapter(mContext, mDailyNotesInfoList);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
+        ////item间隔16
+//        mRecyclerView.addItemDecoration(new SpacesItemDecoration(0,0,0,64));
+        mRecyclerView.addItemDecoration(new LineDecoration(0,2,mContext.getResources().getColor(R.color.colorPrimary)));
+
         mRecyclerView.setAdapter(mMyAdapter);
 
         //设置条目的点击事件
@@ -222,6 +232,7 @@ public class HomeFragment extends Fragment {
                 super.onScrolled(recyclerView, dx, dy);
             }
         });
+        }
     }
 
     /**

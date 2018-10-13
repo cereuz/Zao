@@ -50,4 +50,7 @@
     <string name="scan_qrcode_hint">将二维码对入取景框，即可自动扫描</string>
     <string name="scan_allcode_hint">将二维码或条形码对入取景框，即可自动扫描</string>
 
+    <string name="title_version_update">关于</string>
+    <string name="btn_version_update">更新</string>
+
 </resources>

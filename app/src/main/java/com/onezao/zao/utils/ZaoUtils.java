@@ -1,14 +1,11 @@
 package com.onezao.zao.utils;
 
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
 
 import com.onezao.zao.database.DailyNotesDao;
-import com.onezao.zao.practices.myzxing0306.utils.Constant;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,17 +21,10 @@ import java.util.Locale;
  *  pathSD  :   获取SD卡路径
  */
 public class ZaoUtils {
-    public static String ONEZAO = "onezao";
-    public static String loginToast = "用户名或者密码不能为空！";
-    public static String loginToast2 = "登录成功！";
-    public static String saveSucc = "保存成功！";
-    public static String selectCB = "没有勾选CheckBox哦";
-    public static String loginToastSave = "正在保存用户名和密码！";
-    public static String loginToastSaveSucc = "保存用户名和密码成功！";
-    public static String loginToastSaveFail = "保存用户名和密码失败！";
     public static  String  pathSD = Environment.getExternalStorageDirectory().getPath();
-    public static String SELECTGENDERANDNAME = "请输入姓名并选择性别！";
-
+    public static String CHECK_VERSION_JSON_URL = "https://coding.net/api/share/download/ff61ea71-517e-41c4-b688-7b08b832002d";
+    public static int CHECK_VERSION_CONNECT_TIME = 6000;
+    public static String DIALOG_TITLE = "版本更新";
 
     //获取系统时间。
     @SuppressLint("SimpleDateFormat")
@@ -175,7 +165,7 @@ public class ZaoUtils {
                 @Override
                 public void run() {
                     DailyNotesDao mDao = DailyNotesDao.getInstance(context);
-                    for(int i = 0 ; i < 100 ; i++){
+                    for(int i = 0 ; i < 30 ; i++){
                         String title;
                         String author ;
                         String content;
@@ -186,28 +176,28 @@ public class ZaoUtils {
                             title = "1328238000" + i;
                             author = "蜗牛" + i;
                             content = ConstantValue.AUTHORIZATION;
-                            picpath = "https://img3.doubanio.com/view/status/m/public/3c0f4bfec96a30e.webp";
+                            picpath = "https://img3.doubanio.com/view/photo/l/public/p2294662303.webp";
                             email = "sune"+ i +"do@qq.com" ;
                             time = ZaoUtils.getSystemTimeMore(1);
                             //往数据库插入数据
                             mDao.insert(title, author,content,picpath,email,time);
                             ZaoUtils.sleep(20);
-                        }  else if(i < 100){
+                        }  else if(i < 20){
                             title = "132823800" + i;
                             author = "蜗牛" + i;
                             content = ConstantValue.AUTHORIZATION;
-                            picpath = "https://img3.doubanio.com/view/status/m/public/3c0f4bfec96a30e.webp";
+                            picpath = "https://upfile.asqql.com/2009pasdfasdfic2009s305985-ts/2018-8/201881110474228420.gif";
                             email = "sune"+ i +"do@qq.com" ;
                             time = ZaoUtils.getSystemTimeMore(1);
                             //往数据库插入数据
                             mDao.insert(title, author,content,picpath,email,time);
                             //睡眠，
                             ZaoUtils.sleep(20);
-                        }  else if (i < 1000){
+                        }  else if (i < 30){
                             title = "132823800" + i;
                             author = "蜗牛" + i;
                             content = ConstantValue.AUTHORIZATION;
-                            picpath = "https://img3.doubanio.com/view/status/m/public/3c0f4bfec96a30e.webp";
+                            picpath = "http://p1.pstatp.com/large/166200019850062839d3";
                             email = "sune"+ i +"do@qq.com" ;
                             time = ZaoUtils.getSystemTimeMore(1);
                             //往数据库插入数据

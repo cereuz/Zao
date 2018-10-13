@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.onezao.zao.bean.DailyNotesInfo;
 import com.onezao.zao.recycleview0306.OnItemClickListener;
 import com.onezao.zao.zaov.R;
@@ -39,8 +40,8 @@ public class MyNotesAdapter extends RecyclerView.Adapter<MyNotesAdapter.ViewHold
 
             //设置图片的宽高
             ViewGroup.LayoutParams params = iv_dailynotes_pic.getLayoutParams();
-            params.height= 300;
-            params.width = 300;
+            params.height= ViewGroup.LayoutParams.WRAP_CONTENT;
+            params.width = ViewGroup.LayoutParams.WRAP_CONTENT;
             iv_dailynotes_pic.setLayoutParams(params);
         }
     }
@@ -59,18 +60,30 @@ public class MyNotesAdapter extends RecyclerView.Adapter<MyNotesAdapter.ViewHold
 
     //对RecyclerView子项数据进行赋值
     @Override
-    public void onBindViewHolder(MyNotesAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
 
+//        String url = "http://cn.bing.com/az/hprichbg/rb/Dongdaemun_ZH-CN10736487148_1920x1080.jpg";
+//        String url = "http://p1.pstatp.com/large/166200019850062839d3";
+//        String url = "https://upfile.asqql.com/2009pasdfasdfic2009s305985-ts/2018-8/201881110474228420.gif";
+        String url = mList.get(position).getPicpath();
+        Glide.with(context)
+                .load(url)
+/*                .placeholder(R.mipmap.ic_tab_group_active)//加载成功前显示的图片
+                .error(R.mipmap.ic_tab_home_active)//异常时候显示的图片
+                .fallback(R.mipmap.ic_tab_profile_active)//url为空的时候，显示的图片
+                .diskCacheStrategy(DiskCacheStrategy.NONE)  //不使用缓存*/
+                .into(holder.iv_dailynotes_pic);
+//        Glide.with(context).load(url).into(holder.iv_dailynotes_pic);
 
-        holder.iv_dailynotes_pic.setImageResource(R.mipmap.ic_launcher);
+//        holder.iv_dailynotes_pic.setImageResource(R.mipmap.ic_launcher);
         holder.tv_dailynotes_title.setText(mList.get(position).getTitle());
         holder.tv_dailynotes_author.setText(mList.get(position).getAuthor());
         holder.tv_dailynotes_email.setText(mList.get(position).getEmail());
         holder.tv_dailynotes_time.setText(mList.get(position).getTime());
         holder.tv_dailynotes_content.setText(mList.get(position).getContent());
 
-        holder.itemView.setTag(mList.get(position).getAuthor());
-        holder.iv_dailynotes_pic.setTag(mList.get(position).getEmail());
+/*        holder.itemView.setTag(mList.get(position).getAuthor());
+        holder.iv_dailynotes_pic.setTag(mList.get(position).getEmail());*/
 
         //条目点击事件增加的
         holder.itemView.setOnClickListener(new View.OnClickListener() {

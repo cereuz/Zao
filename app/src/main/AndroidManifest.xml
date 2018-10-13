@@ -72,6 +72,9 @@
 
         <activity android:name="com.onezao.zao.practices.voicebroadcast0306.VoiceBroadcastActivity"/>
 
+        <activity android:name="com.onezao.zao.practices.versionupdate0306.VersionUpdateActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
         <receiver android:name="com.onezao.zao.practices.sendbroadcast0306.MyBroadcastReceiver">
             <intent-filter>
                 <action android:name="com.onezao.broadcast.action"/>
