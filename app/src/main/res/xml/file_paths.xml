@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <paths>
+        <files-path name="my_files" path="Zneo/"/>
+        <cache-path name="my_cache" path="Zneo/" />
+        <external-files-path name="external-files-path" path="Zneo/" />
+        <external-path name="my_external_path" path="Zneo/" />
+        <external-path name="my_external_path2" path="ScreenRecord/" />
+    </paths>
+</resources>
+
+
+<!--
+
+上边的paths 元素指定/data/data/<package-name>/files/images/为共享的目录。
+(file-path所对应的目录与Context.getFilesDir()所对应，即/data/data/<package-name>/files)。
+其中：name属性表示在URI中的描述，path属性表示文件实际存储的位置。
+
+<paths>里边的元素必须是一下的一个或者多个：
+
+<files-path name="name" path="path" /> 对应Context.getFilesDir() + “/path/”，即/data/data/<package-name>/files/path/。
+<cache-path name="name" path="path" /> 对应Context.getCacheDir() + “/path/”，即/data/data/<package-name>/cache/path/。
+<external-files-path name="name" path="path" /> 对应Context.getExternalFilesDir(null) + “/path/”，即/storage/emulated/0/Android/data/<package_name>/files/path/。
+<external-cache-path name="name" path="path" /> 对应Context.getExternalCacheDir() + “/path/”，即/storage/emulated/0/Android/data/<package-name>/cache/path/。
+<external-path name="name" path="path" /> 对应Environment.getExternalStorageDirectory() + “/path/”，即/storage/emulated/0/path/。
+这些paths里边有相同的子元素，即name和path。
+
+name
+这是URI的path。为了加强安全性，这个值隐藏了分享文件的子目录，具体的文件真实路径在path字段中保存。
+
+A URI path segment. To enforce security, this value hides the name of the subdirectory you’re sharing. The subdirectory name for this value is contained in the path attribute.
+
+path
+分享文件的真实路径。需要注意的是，这个值表示的是一个子目录，不是一个具体的文件或者多个文件。开发者不能通过文件名来分享一个文件，也不能通过一个通配符来分享文件。
+
+The subdirectory you’re sharing. While the name attribute is a URI path segment, the path value is an actual subdirectory name. Notice that the value refers to a subdirectory, not an individual file or files. You can’t share a single file by its file name, nor can you specify a subset of files using wildcards.
+
+将paths里边的内容放在一个xml文件中，将该文件放在res/xml/目录下，然后在manifest的provider标签中指定它：
+
+-->

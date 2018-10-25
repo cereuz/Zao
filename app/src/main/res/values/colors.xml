@@ -11,5 +11,7 @@
 
     <color name="choose_eara_item_press_color">#f4f4f4</color>
 
-    <color name="scan_bg">#7f000000</color>
+    <color name="color_black">#7f000000</color>
+
+    <color name="translucent_background">#90000000</color>
 </resources>

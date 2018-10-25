@@ -4,9 +4,8 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.app.NotificationManager;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.FeatureInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -18,7 +17,6 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,10 +25,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.onezao.zao.gridrecycleview0306.GridRecycleActivity;
-import com.onezao.zao.practices.alertdialog0306.AlertDialogActivity;
+import com.onezao.zao.myapp.BaseActivity;
+import com.onezao.zao.utils.CreatNotificationChannelUtil;
 
-public class AdminActivity extends AppCompatActivity
+import static android.os.Build.VERSION_CODES.O;
+
+public class AdminActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener,View.OnClickListener {
 
     RelativeLayout rl_home;
@@ -89,6 +89,14 @@ public class AdminActivity extends AppCompatActivity
         initView();
         initHome();
         initPermission();
+
+        if(Build.VERSION.SDK_INT >= O) {
+            /**
+             * 创建 通知渠道
+             */
+            CreatNotificationChannelUtil.createNotificationChannel(this, "chat", "我的聊天消息", NotificationManager.IMPORTANCE_MAX);
+            CreatNotificationChannelUtil.createNotificationChannel(this, "subscribe", "我的订阅消息", NotificationManager.IMPORTANCE_DEFAULT);
+        }
     }
 
     private void initPermission() {
@@ -272,6 +280,7 @@ public class AdminActivity extends AppCompatActivity
                         Manifest.permission.CHANGE_WIFI_STATE,
                         Manifest.permission.ACCESS_WIFI_STATE,
                         Manifest.permission.ACCESS_NETWORK_STATE,
+                        Manifest.permission.RECORD_AUDIO,
 /*                        Manifest.permission.FLASHLIGHT,
                         Manifest.permission.READ_HISTORY_BOOKMARKS,*/
 //                        Manifest.permission.CAMERA
@@ -301,6 +310,7 @@ public class AdminActivity extends AppCompatActivity
                         Manifest.permission.CHANGE_WIFI_STATE,
                         Manifest.permission.ACCESS_WIFI_STATE,
                         Manifest.permission.ACCESS_NETWORK_STATE,
+                        Manifest.permission.RECORD_AUDIO,
 //                        Manifest.permission.CAMERA
                 },
                 MY_PERMISSION_REQUEST_CODE

@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <!-- 二维码相关权限 -->
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -19,8 +20,11 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
 
     <application
+        android:name="com.onezao.zao.myapp.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -57,6 +61,7 @@
         <activity android:name="com.onezao.zao.practices.myzxing0306.CommonScanActivity"></activity>
         <activity android:name="com.onezao.zao.practices.myzxing0306.CreateCodeActivity"></activity>
         <activity android:name="com.onezao.zao.practices.myzxing0306.MyScanActivity"></activity>
+        <activity android:name="com.onezao.zao.practices.mynotitification0306.NotificationActivity"/>
 
         <activity android:name="com.onezao.zao.javamail.JavaMailActivity"></activity>
         <activity android:name="com.onezao.zao.javamail.JavaMailSetupActivity"
@@ -75,6 +80,9 @@
         <activity android:name="com.onezao.zao.practices.versionupdate0306.VersionUpdateActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
+        <activity android:name="com.onezao.zao.practices.screenrecord0306.ScreenRecordActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
         <receiver android:name="com.onezao.zao.practices.sendbroadcast0306.MyBroadcastReceiver">
             <intent-filter>
                 <action android:name="com.onezao.broadcast.action"/>
@@ -89,6 +97,19 @@
                 <data android:scheme="package"/>
             </intent-filter>
         </receiver>
+
+        <service android:name="com.onezao.zao.practices.screenrecord0306.RecordService"/>
+        <service android:name="com.onezao.zao.practices.screenrecord0306.RecordService2"/>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.onezao.zao.zaov.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

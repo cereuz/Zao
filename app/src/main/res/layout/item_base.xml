@@ -12,6 +12,6 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:textColor="@color/colorRed"
-        android:text="A"
+        android:text="未下拉"
         />
 </FrameLayout>

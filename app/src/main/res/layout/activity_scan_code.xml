@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_alignParentTop="true"
-        android:background="@color/scan_bg">
+        android:background="@color/color_black">
         <RelativeLayout
             android:id="@+id/title_bar"
             android:layout_width="fill_parent"
@@ -64,7 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/scan_bg"
+        android:background="@color/color_black"
         android:orientation="vertical"
         android:paddingBottom="16dp"
         >
@@ -139,14 +139,14 @@
             android:layout_width="34dp"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
-            android:background="@color/scan_bg"
+            android:background="@color/color_black"
             android:contentDescription="@string/app_name" />
         <ImageView
             android:id="@+id/right_mask"
             android:layout_width="34dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:background="@color/scan_bg" />
+            android:background="@color/color_black" />
         <RelativeLayout
             android:id="@+id/capture_crop_view"
             android:layout_width="match_parent"

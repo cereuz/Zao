@@ -65,6 +65,14 @@ public class ConstantValue {
      */
     public static final String DADABASE_DAILYNOTES = "zao0915";
     /**
+     * 创建 信息频道的 ID
+     */
+    public static final String ID_CHANNEL = "message";
+    /**
+     * 创建 信息频道的 名称
+     */
+    public static final String NAME_CHANNEL = "蜗牛学习";
+    /**
      * 每日笔记的数据库
      */
     public static final String DATABASE_DAILYNOTES_TABLE_NAME = "dailynotes";

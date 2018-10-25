@@ -1,6 +1,5 @@
 package com.onezao.zao.recycleview0306;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,6 +14,8 @@ import com.onezao.zao.fourlevel0306.FourLevelActivity;
 import com.onezao.zao.gridrecycleview0306.GridRecycleActivity;
 import com.onezao.zao.gridrecycleview0306.GridRecycleVerticalActivity;
 import com.onezao.zao.javamail.JavaMailSetupActivity;
+import com.onezao.zao.myapp.BaseActivity;
+import com.onezao.zao.practices.mynotitification0306.NotificationActivity;
 import com.onezao.zao.practices.okhttp0306.OkHttpActivity;
 import com.onezao.zao.practices.alertdialog0306.AlertDialogActivity;
 import com.onezao.zao.practices.gesturelock0306.GestureLockActivity;
@@ -24,6 +25,7 @@ import com.onezao.zao.practices.paintboard0306.PaintBoardActivity;
 import com.onezao.zao.practices.picgallery0306.PicGalleryActivity;
 import com.onezao.zao.practices.popupwindow0306.PopupWindowActivity;
 import com.onezao.zao.practices.pressurediagram0306.PressureDiagramActivity;
+import com.onezao.zao.practices.screenrecord0306.ScreenRecordActivity;
 import com.onezao.zao.practices.sendbroadcast0306.SendBroadcastActivity;
 import com.onezao.zao.practices.toggleview0306.ToggleViewActivity;
 import com.onezao.zao.practices.versionupdate0306.VersionUpdateActivity;
@@ -33,7 +35,7 @@ import com.onezao.zao.practices.voicebroadcast0306.VoiceBroadcastActivity;
 import com.onezao.zao.staggeredrecycleview0306.StaggeredActivity;
 import com.onezao.zao.zaov.R;
 
-public class RecycleViewActivity extends Activity {
+public class RecycleViewActivity extends BaseActivity {
     private Button btnMain;
     private RecyclerView mRecyclerView;
     private MyPicAdapter mMyAdapter;
@@ -59,7 +61,7 @@ public class RecycleViewActivity extends Activity {
 
         String[] data = {this.getResources().getString(R.string.toGrid),"GridVertical","FourLevel","Staggered","DifferentItem","Refresh","OkHttp0626","AlertDialogActivity","PicGalleryActivity","DelayHandlerActivity", "ViewAnimationActivity","PaintBoardActivity",
                 "SendBroadcastActivity","PressureDiagramActivity","MyScanActivity","JavaMailSetupActivity","GestureLock",
-                "ViewPager","PopupWindowActivity","ToggleViewActivity","VoiceBroadcastActivity","VersionUpdateActivity","Zour","Zneo","Zsky","Zour",        "GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky","GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky"};
+                "ViewPager","PopupWindowActivity","ToggleViewActivity","VoiceBroadcastActivity","VersionUpdateActivity","ScreenRecordActivity","NotificationActivity","Zsky","Zour",        "GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky","GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky"};
         mMyAdapter = new MyPicAdapter(this, data);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mMyAdapter);
@@ -185,6 +187,12 @@ public class RecycleViewActivity extends Activity {
                 return;
             case "VersionUpdateActivity" :
                 startActivity(new Intent(this,VersionUpdateActivity.class));
+                return;
+            case "ScreenRecordActivity" :
+                startActivity(new Intent(this,ScreenRecordActivity.class));
+                return;
+            case "NotificationActivity" :
+                startActivity(new Intent(this,NotificationActivity.class));
                 return;
 
         }
