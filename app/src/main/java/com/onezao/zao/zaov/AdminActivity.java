@@ -61,6 +61,14 @@ public class AdminActivity extends BaseActivity
     final String positive = "获取权限" ;
     final String negative = "退出";
 
+    private String[] permission = new String[]{
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.CAMERA,
+            Manifest.permission.READ_CONTACTS,
+            Manifest.permission.RECORD_AUDIO,
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -268,24 +276,7 @@ public class AdminActivity extends BaseActivity
         /**
          * 第 1 步: 检查是否有相应的权限
          */
-        boolean isAllGranted = checkPermissionAllGranted(
-                new String[] {
-                        Manifest.permission.INTERNET,
-                        Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.VIBRATE,
-                        Manifest.permission.CAMERA,
-
-                        Manifest.permission.READ_CONTACTS,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.CHANGE_WIFI_STATE,
-                        Manifest.permission.ACCESS_WIFI_STATE,
-                        Manifest.permission.ACCESS_NETWORK_STATE,
-                        Manifest.permission.RECORD_AUDIO,
-/*                        Manifest.permission.FLASHLIGHT,
-                        Manifest.permission.READ_HISTORY_BOOKMARKS,*/
-//                        Manifest.permission.CAMERA
-                }
-        );
+        boolean isAllGranted = checkPermissionAllGranted(permission);
         // 如果这3个权限全都拥有, 则直接执行读取短信代码
         if (isAllGranted) {
 /*            getData();
@@ -300,19 +291,7 @@ public class AdminActivity extends BaseActivity
         // 一次请求多个权限, 如果其他有权限是已经授予的将会自动忽略掉
         ActivityCompat.requestPermissions(
                 this,
-                new String[] {
-                        Manifest.permission.INTERNET,
-                        Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.VIBRATE,
-                        Manifest.permission.CAMERA,
-                        Manifest.permission.READ_CONTACTS,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.CHANGE_WIFI_STATE,
-                        Manifest.permission.ACCESS_WIFI_STATE,
-                        Manifest.permission.ACCESS_NETWORK_STATE,
-                        Manifest.permission.RECORD_AUDIO,
-//                        Manifest.permission.CAMERA
-                },
+                permission,
                 MY_PERMISSION_REQUEST_CODE
         );
     }
