@@ -3,6 +3,7 @@ package com.onezao.zao.zaov;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.location.Criteria;
@@ -19,6 +20,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.onezao.zao.practices.taiji0306.BGActivity;
 import com.onezao.zao.recycleview0306.MyPicAdapter;
 import com.onezao.zao.utils.LogZ;
 import com.onezao.zao.view.BGView;
@@ -76,6 +78,7 @@ public class ProfileFragment extends Fragment {
         int    nowYear  = TimeUtils.getNowYear();
         int    nowMonth = TimeUtils.getNowMonth();
         int    nowDate  = TimeUtils.getNowDate();
+        LogZ.e(nowYear + "年，" + nowMonth + "月，" + nowDate + "日。");
         String lunar    = Lauar.getLunar(nowYear + "", nowMonth + "", nowDate + "");
         mTvOldDate.setText(lunar);
     }
@@ -100,6 +103,7 @@ public class ProfileFragment extends Fragment {
             public void OnUp(int x, int y) {
                 // TODO Auto-generated method stub
                 LogZ.e("up x = " + x + " y = " + y);
+                mContext.startActivity(new Intent(mContext, BGActivity.class));
             }
         });
     }

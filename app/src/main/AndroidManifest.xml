@@ -83,6 +83,8 @@
         <activity android:name="com.onezao.zao.practices.screenrecord0306.ScreenRecordActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
+        <activity android:name="com.onezao.zao.practices.taiji0306.BGActivity"/>
+
         <receiver android:name="com.onezao.zao.practices.sendbroadcast0306.MyBroadcastReceiver">
             <intent-filter>
                 <action android:name="com.onezao.broadcast.action"/>
