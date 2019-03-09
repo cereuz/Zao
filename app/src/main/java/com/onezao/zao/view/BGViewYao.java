@@ -18,7 +18,7 @@ import android.view.WindowManager;
  *  @创建时间:  2016/7/24 16:37
  *  @描述：    八卦View
  */
-public class BGView2
+public class BGViewYao
         extends View
 {
     private OnDownActionListener mDown = null;
@@ -91,14 +91,15 @@ public class BGView2
                                          "酉",
                                          "戌",
                                          "亥"};//地支
-    private final String[] fBg        = {
-                                        "天乾","泽兑","火离","震雷",
-                                        "坤地","风巽","水坎","山艮",
-                                         };//方位
-    private final int[][]  fTrigram   = {{1,
-                                          1,
-                                          1},
-                                         {2,
+    private final String[] fBg        = {"坤地",
+                                         "震雷",
+                                         "火离",
+                                         "泽兑",
+                                         "天乾",
+                                         "风巽",
+                                         "水坎",
+                                         "山艮"};//方位
+    private final int[][]  fTrigram   = {{2,
                                           1,
                                           1},
                                          {1,
@@ -106,18 +107,22 @@ public class BGView2
                                           1},
                                          {2,
                                           2,
+                                          2},
+                                         {1,
+                                          1,
+                                          2},
+                                         {1,
+                                          1,
                                           1},
-
+                                         {2,
+                                          1,
+                                          2},
                                          {2,
                                           2,
-                                          2},
-            {1, 1, 2},
-            {2,
-                    1,
-                    2},
-                                          {1,
-            2,
-            2}};//爻的变化
+                                          1},
+                                         {1,
+                                          2,
+                                          2}};//爻的变化
     private final String[] fBm        = {"开 门",
                                          "休 门",
                                          "生 门",
@@ -180,11 +185,11 @@ public class BGView2
                                          "柳"};
     private       boolean  isRotate   = true;
 
-    public BGView2(Context context) {
+    public BGViewYao(Context context) {
         this(context, null);
     }
 
-    public BGView2(Context context, AttributeSet attrs) {
+    public BGViewYao(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         //动态设置太极半径
@@ -281,12 +286,19 @@ public class BGView2
         drawTj(canvas);
         drawOutCircle(canvas);//最外面的外圆
         //方位
-//        drawDirection(canvas);
+        drawDirection(canvas);
         drawCircle(canvas, m8GRadius1);//外圆1
-//        drawDoor(canvas);
+        drawDoor(canvas);
         drawCircle(canvas, m8GRadius2);//外圆2
         draw8G(canvas, 0, true);//第一个八卦爻
+        draw8G(canvas,   - m8GRadius1 / 3, false);//第二个八卦爻
         draw8G(canvas, m8GRadius3 - m8GRadius2, false);//第二个八卦爻
+//        draw8G(canvas, m8GRadius4 - m8GRadius2, false);//第二个八卦爻
+        draw8G(canvas, m8GRadius5 - m8GRadius2, false);//第二个八卦爻
+//        draw8G(canvas, m8GRadius6 - m8GRadius2, false);//第二个八卦爻
+        draw8G(canvas, m8GRadius7 - m8GRadius2, false);//第二个八卦爻
+//        draw8G(canvas, m8GRadius8 - m8GRadius2, false);//第二个八卦爻
+        draw8G(canvas, m8GRadius9 - m8GRadius2, false);//第二个八卦爻
         drawCircle(canvas, m8GRadius3);//外圆3
         drawCircle(canvas, m8GRadius4);//外圆4
         drawCircle(canvas, m8GRadius5);//外圆5
@@ -294,10 +306,10 @@ public class BGView2
         drawCircle(canvas, m8GRadius7);//外圆7
         drawCircle(canvas, m8GRadius8);//外圆8
         drawCircle(canvas, m8GRadius9);//外圆9
-//        drawTianGan(canvas);//天干
-//        drawDiZhi(canvas);//地支
-//        draw24JQ(canvas);//二十四节气
-//        draw28XS(canvas);//二十八星宿
+/*        drawTianGan(canvas);//天干
+        drawDiZhi(canvas);//地支
+        draw24JQ(canvas);//二十四节气
+        draw28XS(canvas);//二十八星宿*/
     }
 
     /**
@@ -342,7 +354,7 @@ public class BGView2
      * @param stopY 线结束的Y轴坐标
      */
     private void drawText(Canvas canvas, float degress, String[] str, float fontY, float startY, float stopY) {
-        float rotateDegress = 360F / str.length / 2 ;
+        float rotateDegress = 360F / str.length / 2;
         canvas.rotate(degress, mCx, mCy);
         for (int i = 0; i < str.length; i++) {
             canvas.drawText(str[i], mCx, fontY, mPaintFont);
@@ -497,7 +509,6 @@ public class BGView2
             if (!isFrist) {
                 //画字
                 canvas.drawText(fBg[i], mCx, fontY, mPaintFont);
-//                canvas.drawText(fBg[i], fontY, mCx, mPaintFont);
             }
 
             //画线
@@ -508,7 +519,7 @@ public class BGView2
                      ? stopY1
                      : stopY2);
             //旋转画布
-            canvas.rotate(45 , mCx, mCy);
+            canvas.rotate(45, mCx, mCy);
         }
 
         if (isFrist) {
