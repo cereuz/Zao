@@ -3,7 +3,6 @@ package com.onezao.zao.practices.taiji0306;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-
 import com.onezao.zao.zaov.R;
 
 public class BGActivity extends AppCompatActivity {
