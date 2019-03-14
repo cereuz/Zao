@@ -16,6 +16,7 @@ import com.onezao.zao.gridrecycleview0306.GridRecycleVerticalActivity;
 import com.onezao.zao.javamail.JavaMailSetupActivity;
 import com.onezao.zao.myapp.BaseActivity;
 import com.onezao.zao.practices.eventbus0306.EventBusActivity;
+import com.onezao.zao.practices.eventbus0306.order.EventBusOrderActivity;
 import com.onezao.zao.practices.mynotitification0306.NotificationActivity;
 import com.onezao.zao.practices.okhttp0306.OkHttpActivity;
 import com.onezao.zao.practices.alertdialog0306.AlertDialogActivity;
@@ -62,7 +63,7 @@ public class RecycleViewActivity extends BaseActivity {
 
         String[] data = {this.getResources().getString(R.string.toGrid),"GridVertical","FourLevel","Staggered","DifferentItem","Refresh","OkHttp0626","AlertDialogActivity","PicGalleryActivity","DelayHandlerActivity", "ViewAnimationActivity","PaintBoardActivity",
                 "SendBroadcastActivity","PressureDiagramActivity","MyScanActivity","JavaMailSetupActivity","GestureLock",
-                "ViewPager","PopupWindowActivity","ToggleViewActivity","VoiceBroadcastActivity","VersionUpdateActivity","ScreenRecordActivity","NotificationActivity","EventBusActivity","Zour",        "GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky","GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky"};
+                "ViewPager","PopupWindowActivity","ToggleViewActivity","VoiceBroadcastActivity","VersionUpdateActivity","ScreenRecordActivity","NotificationActivity","EventBusActivity","EventBusOrderActivity",        "GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky","GridVertical","FourLevel","Staggered","DifferentItem","Zneo","Zsky"};
         mMyAdapter = new MyPicAdapter(this, data);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mMyAdapter);
@@ -197,6 +198,9 @@ public class RecycleViewActivity extends BaseActivity {
                 return;
             case "EventBusActivity" :
                 startActivity(new Intent(this, EventBusActivity.class));
+                return;
+            case "EventBusOrderActivity" :
+                startActivity(new Intent(this, EventBusOrderActivity.class));
                 return;
 
         }

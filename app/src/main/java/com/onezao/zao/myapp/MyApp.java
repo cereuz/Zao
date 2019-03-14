@@ -2,6 +2,9 @@ package com.onezao.zao.myapp;
 
 import android.app.Activity;
 import android.app.Application;
+
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +14,7 @@ public class MyApp extends Application {
     public void onCreate() {
         super.onCreate();
         mList = new ArrayList<Activity>();
+
     }
 
     /**
