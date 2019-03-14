@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.onezao.zao.utils.LogZ;
+import com.onezao.zao.utils.ZaoUtils;
 import com.onezao.zao.zaov.R;
 
 import org.greenrobot.eventbus.EventBus;
@@ -45,19 +46,42 @@ public class EventBusActivity extends AppCompatActivity implements View.OnClickL
     private void initContentView() {
         Button btnStart = findViewById(R.id.btn_eventbus_start_activity);
         Button btnStart_Third = findViewById(R.id.btn_eventbus_start_activity_third);
+        Button btnStart_Post_Sticky = findViewById(R.id.btn_eventbus_start_activity_postSticky);
+        Button btnStart_Sticky = findViewById(R.id.btn_eventbus_start_activity_sticky);
         mTvMessage = findViewById(R.id.tv_eventbus_message);
         btnStart.setOnClickListener(this);
         btnStart_Third.setOnClickListener(this);
+        btnStart_Post_Sticky.setOnClickListener(this);
+        btnStart_Sticky.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.btn_eventbus_start_activity) {
+/*        if (v.getId() == R.id.btn_eventbus_start_activity) {
             LogZ.e("The Button is clicked.== EventBusSecondActivity");
             EventBusSecondActivity.start(this);
         } else if(v.getId() == R.id.btn_eventbus_start_activity_third){
             LogZ.e("The Button is clicked.== EventBusThirdActivity");
             EventBusThirdActivity.start(this);
+        }*/
+        switch (v.getId()){
+            case R.id.btn_eventbus_start_activity :
+                LogZ.e("The Button is clicked.== EventBusSecondActivity");
+                EventBusSecondActivity.start(this);
+                break;
+            case R.id.btn_eventbus_start_activity_third :
+                LogZ.e("The Button is clicked.== EventBusThirdActivity");
+                EventBusThirdActivity.start(this);
+                break;
+            case R.id.btn_eventbus_start_activity_postSticky :
+                LogZ.e("The Button is clicked.== POST_STICKY");
+                // 发布粘性事件
+                EventBus.getDefault().postSticky(new MessageEvent("Hello EventBus! POST_STICKY\n" + ZaoUtils.getSystemTimeMore(2)));
+                break;
+            case R.id.btn_eventbus_start_activity_sticky :
+                LogZ.e("The Button is clicked.== EventBusStickyActivity");
+                EventBusStickyActivity.start(this);
+                break;
         }
     }
 

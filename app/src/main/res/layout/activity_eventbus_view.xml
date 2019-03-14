@@ -16,10 +16,22 @@
         android:layout_height="wrap_content"
         android:text="First_Start_Third" />
 
+    <Button
+        android:id="@+id/btn_eventbus_start_activity_postSticky"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Post_Sticky" />
+
+    <Button
+        android:id="@+id/btn_eventbus_start_activity_sticky"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="To_Sticky" />
+
     <TextView
         android:id="@+id/tv_eventbus_message"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:textSize="@dimen/title_size"
         android:text="First_TextView" />
 

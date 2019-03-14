@@ -88,6 +88,7 @@
         <activity android:name="com.onezao.zao.practices.eventbus0306.EventBusActivity"/>
         <activity android:name="com.onezao.zao.practices.eventbus0306.EventBusSecondActivity"/>
         <activity android:name="com.onezao.zao.practices.eventbus0306.EventBusThirdActivity"/>
+        <activity android:name="com.onezao.zao.practices.eventbus0306.EventBusStickyActivity"/>
 
         <receiver android:name="com.onezao.zao.practices.sendbroadcast0306.MyBroadcastReceiver">
             <intent-filter>
