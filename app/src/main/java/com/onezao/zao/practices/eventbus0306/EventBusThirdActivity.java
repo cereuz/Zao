@@ -18,10 +18,10 @@ import org.greenrobot.eventbus.EventBus;
  * @date : 2019/3/13 17:52.
  */
 
-public class EventBusSecondActivity extends AppCompatActivity implements View.OnClickListener {
+public class EventBusThirdActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static void start(Context context) {
-        Intent intent = new Intent(context, EventBusSecondActivity.class);
+        Intent intent = new Intent(context, EventBusThirdActivity.class);
         context.startActivity(intent);
     }
 
@@ -39,8 +39,14 @@ public class EventBusSecondActivity extends AppCompatActivity implements View.On
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_other_post_event) {
-            // 发布事件
-            EventBus.getDefault().post(new MessageEvent("Hello EventBus! EventBusSecondActivity \n" + ZaoUtils.getSystemTimeMore(2)));
+
+            new Thread("zw") {
+                @Override
+                public void run() {
+                    // 发布事件
+                    EventBus.getDefault().post(new MessageEvent("Hello EventBus!  EventBusThirdActivity \n " + ZaoUtils.getSystemTimeMore(2)));
+                }
+            }.start();
         }
     }
 }

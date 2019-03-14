@@ -4,8 +4,8 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/btn_second_post_event"
+        android:id="@+id/btn_other_post_event"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Second" />
+        android:text="OTHER" />
 </LinearLayout>

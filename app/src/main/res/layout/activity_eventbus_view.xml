@@ -8,11 +8,19 @@
         android:id="@+id/btn_eventbus_start_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="First_Start" />
+        android:text="First_Start_Second" />
+
+    <Button
+        android:id="@+id/btn_eventbus_start_activity_third"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="First_Start_Third" />
 
     <TextView
         android:id="@+id/tv_eventbus_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/title_size"
         android:text="First_TextView" />
+
 </LinearLayout>
