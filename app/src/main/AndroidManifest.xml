@@ -92,6 +92,11 @@
         <activity android:name="com.onezao.zao.practices.eventbus0306.order.EventBusOrderActivity"/>
         <activity android:name="com.onezao.zao.practices.eventbus0306.order.EventBusOrderSecondActivity"/>
 
+        <activity android:name="com.onezao.zao.practices.iciba0306.IcibaActivity"/>
+        <activity android:name="com.onezao.zao.practices.youdao0306.YoudaoActivity"/>
+
+        <activity android:name="com.onezao.zao.practices.rxjava0306.RxJavaActivity"/>
+
         <receiver android:name="com.onezao.zao.practices.sendbroadcast0306.MyBroadcastReceiver">
             <intent-filter>
                 <action android:name="com.onezao.broadcast.action"/>
