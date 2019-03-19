@@ -5,6 +5,8 @@ import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.NotificationManager;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -27,6 +29,8 @@ import android.widget.Toast;
 
 import com.onezao.zao.myapp.BaseActivity;
 import com.onezao.zao.utils.CreatNotificationChannelUtil;
+import com.onezao.zao.utils.LogZ;
+import com.onezao.zao.utils.ToastUtil;
 
 import static android.os.Build.VERSION_CODES.O;
 
@@ -104,6 +108,28 @@ public class AdminActivity extends BaseActivity
              */
             CreatNotificationChannelUtil.createNotificationChannel(this, "chat", "我的聊天消息", NotificationManager.IMPORTANCE_MAX);
             CreatNotificationChannelUtil.createNotificationChannel(this, "subscribe", "我的订阅消息", NotificationManager.IMPORTANCE_DEFAULT);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initClipboard();
+    }
+
+    /**
+     * 监听剪贴板文字内容
+     * 对剪贴板文字的操作
+     */
+    private void initClipboard() {
+        ClipboardManager cm = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+        ClipData data = cm.getPrimaryClip();
+        int count = data.getItemCount();
+        for(int i = 0; i < count ; i++){
+            ClipData.Item item = data.getItemAt(i);
+            String content = item.getText().toString();
+            LogZ.e("第 " + i + " 条 ：" + content);
+            ToastUtil.showT(this,"第 " + i + " 条 ：" + content);
         }
     }
 
