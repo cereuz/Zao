@@ -124,7 +124,10 @@ public class AdminActivity extends BaseActivity
     private void initClipboard() {
         ClipboardManager cm = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
         ClipData data = cm.getPrimaryClip();
-        int count = data.getItemCount();
+        int count = 0;
+        if (data != null) {
+            count = data.getItemCount();
+        }
         for(int i = 0; i < count ; i++){
             ClipData.Item item = data.getItemAt(i);
             String content = item.getText().toString();
