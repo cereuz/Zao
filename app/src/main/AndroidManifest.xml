@@ -99,6 +99,8 @@
 
         <activity android:name="com.onezao.zao.practices.agentview0306.AgentViewActivity"
                   android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name="com.onezao.zao.practices.bar0306.BarActivity"
+                  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
         <receiver android:name="com.onezao.zao.practices.sendbroadcast0306.MyBroadcastReceiver">
             <intent-filter>

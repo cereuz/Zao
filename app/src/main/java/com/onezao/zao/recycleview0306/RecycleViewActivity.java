@@ -16,6 +16,7 @@ import com.onezao.zao.gridrecycleview0306.GridRecycleVerticalActivity;
 import com.onezao.zao.javamail.JavaMailSetupActivity;
 import com.onezao.zao.myapp.BaseActivity;
 import com.onezao.zao.practices.agentview0306.AgentViewActivity;
+import com.onezao.zao.practices.bar0306.BarActivity;
 import com.onezao.zao.practices.eventbus0306.EventBusActivity;
 import com.onezao.zao.practices.eventbus0306.order.EventBusOrderActivity;
 import com.onezao.zao.practices.iciba0306.IcibaActivity;
@@ -68,7 +69,7 @@ public class RecycleViewActivity extends BaseActivity {
         String[] data = {this.getResources().getString(R.string.toGrid),"GridVertical","FourLevel","Staggered","DifferentItem","Refresh","OkHttp0626","AlertDialogActivity","PicGalleryActivity","DelayHandlerActivity", "ViewAnimationActivity","PaintBoardActivity",
                 "SendBroadcastActivity","PressureDiagramActivity","MyScanActivity","JavaMailSetupActivity","GestureLock",
                 "ViewPager","PopupWindowActivity","ToggleViewActivity","VoiceBroadcastActivity","VersionUpdateActivity","ScreenRecordActivity","NotificationActivity","EventBusActivity","EventBusOrderActivity",
-                "IcibaActivity","YoudaoActivity","RxJavaActivity","AgentViewActivity","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky",
+                "IcibaActivity","YoudaoActivity","RxJavaActivity","AgentViewActivity","BarActivity","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky",
                 "Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky"};
         mMyAdapter = new MyPicAdapter(this, data);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -219,6 +220,9 @@ public class RecycleViewActivity extends BaseActivity {
                 return;
             case "AgentViewActivity" :
                 startActivity(new Intent(this, AgentViewActivity.class));
+                return;
+            case "BarActivity" :
+                startActivity(new Intent(this, BarActivity.class));
                 return;
 
         }
