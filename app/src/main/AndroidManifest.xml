@@ -22,6 +22,10 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="com.fingerprints.service.ACCESS_FINGERPRINT_MANAGER" />
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
+
 
     <application
         android:name="com.onezao.zao.myapp.MyApp"
@@ -101,6 +105,12 @@
                   android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name="com.onezao.zao.practices.bar0306.BarActivity"
                   android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name="com.onezao.zao.practices.security0306.activity.ClosePatternPswActivity" />
+        <activity android:name="com.onezao.zao.practices.security0306.activity.SettingPatternPswActivity" />
+        <activity android:name="com.onezao.zao.practices.security0306.activity.SplashVerifyActivity" />
+        <activity android:name="com.onezao.zao.practices.security0306.activity.VerifyActivity"
+                  android:launchMode="singleTask"/>
+        <activity android:name="com.onezao.zao.practices.security0306.activity.VerifyFingerActivity" />
 
         <receiver android:name="com.onezao.zao.practices.sendbroadcast0306.MyBroadcastReceiver">
             <intent-filter>

@@ -32,6 +32,7 @@ import com.onezao.zao.practices.popupwindow0306.PopupWindowActivity;
 import com.onezao.zao.practices.pressurediagram0306.PressureDiagramActivity;
 import com.onezao.zao.practices.rxjava0306.RxJavaActivity;
 import com.onezao.zao.practices.screenrecord0306.ScreenRecordActivity;
+import com.onezao.zao.practices.security0306.activity.SplashVerifyActivity;
 import com.onezao.zao.practices.sendbroadcast0306.SendBroadcastActivity;
 import com.onezao.zao.practices.toggleview0306.ToggleViewActivity;
 import com.onezao.zao.practices.versionupdate0306.VersionUpdateActivity;
@@ -69,7 +70,7 @@ public class RecycleViewActivity extends BaseActivity {
         String[] data = {this.getResources().getString(R.string.toGrid),"GridVertical","FourLevel","Staggered","DifferentItem","Refresh","OkHttp0626","AlertDialogActivity","PicGalleryActivity","DelayHandlerActivity", "ViewAnimationActivity","PaintBoardActivity",
                 "SendBroadcastActivity","PressureDiagramActivity","MyScanActivity","JavaMailSetupActivity","GestureLock",
                 "ViewPager","PopupWindowActivity","ToggleViewActivity","VoiceBroadcastActivity","VersionUpdateActivity","ScreenRecordActivity","NotificationActivity","EventBusActivity","EventBusOrderActivity",
-                "IcibaActivity","YoudaoActivity","RxJavaActivity","AgentViewActivity","BarActivity","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky",
+                "IcibaActivity","YoudaoActivity","RxJavaActivity","AgentViewActivity","BarActivity","SplashVerifyActivity","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky",
                 "Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky"};
         mMyAdapter = new MyPicAdapter(this, data);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -223,6 +224,9 @@ public class RecycleViewActivity extends BaseActivity {
                 return;
             case "BarActivity" :
                 startActivity(new Intent(this, BarActivity.class));
+                return;
+            case "SplashVerifyActivity" :
+                startActivity(new Intent(this, SplashVerifyActivity.class));
                 return;
 
         }

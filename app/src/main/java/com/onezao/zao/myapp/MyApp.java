@@ -2,19 +2,23 @@ package com.onezao.zao.myapp;
 
 import android.app.Activity;
 import android.app.Application;
-
-import org.greenrobot.eventbus.EventBus;
+import android.content.Context;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MyApp extends Application {
     private List<Activity> mList;//用于存放所有启动的Activity的集合
+    private static Context mAppContext;
 
     public void onCreate() {
         super.onCreate();
+        mAppContext = getApplicationContext();
         mList = new ArrayList<Activity>();
+    }
 
+    public static Context getAppContext() {
+        return mAppContext;
     }
 
     /**
