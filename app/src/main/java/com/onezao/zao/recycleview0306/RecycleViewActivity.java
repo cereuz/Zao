@@ -17,6 +17,7 @@ import com.onezao.zao.javamail.JavaMailSetupActivity;
 import com.onezao.zao.myapp.BaseActivity;
 import com.onezao.zao.practices.agentview0306.AgentViewActivity;
 import com.onezao.zao.practices.bar0306.BarActivity;
+import com.onezao.zao.practices.coupon0306.CouponActivity;
 import com.onezao.zao.practices.eventbus0306.EventBusActivity;
 import com.onezao.zao.practices.eventbus0306.order.EventBusOrderActivity;
 import com.onezao.zao.practices.iciba0306.IcibaActivity;
@@ -70,7 +71,7 @@ public class RecycleViewActivity extends BaseActivity {
         String[] data = {this.getResources().getString(R.string.toGrid),"GridVertical","FourLevel","Staggered","DifferentItem","Refresh","OkHttp0626","AlertDialogActivity","PicGalleryActivity","DelayHandlerActivity", "ViewAnimationActivity","PaintBoardActivity",
                 "SendBroadcastActivity","PressureDiagramActivity","MyScanActivity","JavaMailSetupActivity","GestureLock",
                 "ViewPager","PopupWindowActivity","ToggleViewActivity","VoiceBroadcastActivity","VersionUpdateActivity","ScreenRecordActivity","NotificationActivity","EventBusActivity","EventBusOrderActivity",
-                "IcibaActivity","YoudaoActivity","RxJavaActivity","AgentViewActivity","BarActivity","SplashVerifyActivity","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky",
+                "IcibaActivity","YoudaoActivity","RxJavaActivity","AgentViewActivity","BarActivity","SplashVerifyActivity","CouponActivity","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky",
                 "Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky","Zneo","Zsky"};
         mMyAdapter = new MyPicAdapter(this, data);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -227,6 +228,9 @@ public class RecycleViewActivity extends BaseActivity {
                 return;
             case "SplashVerifyActivity" :
                 startActivity(new Intent(this, SplashVerifyActivity.class));
+                return;
+            case "CouponActivity" :
+                startActivity(new Intent(this, CouponActivity.class));
                 return;
 
         }

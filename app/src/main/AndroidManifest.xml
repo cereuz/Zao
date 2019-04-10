@@ -111,6 +111,7 @@
         <activity android:name="com.onezao.zao.practices.security0306.activity.VerifyActivity"
                   android:launchMode="singleTask"/>
         <activity android:name="com.onezao.zao.practices.security0306.activity.VerifyFingerActivity" />
+        <activity android:name="com.onezao.zao.practices.coupon0306.CouponActivity" />
 
         <receiver android:name="com.onezao.zao.practices.sendbroadcast0306.MyBroadcastReceiver">
             <intent-filter>
